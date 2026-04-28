@@ -326,9 +326,21 @@ h3{
     position: relative;
     cursor: pointer;
 }
-
 .btn-testimonial:hover {
     border: 1px solid #f44336;
     background: #f44336;
     transition: 1s;
+}
+@media(max-width: 700) {
+    .testimonial-col {
+        height: auto;
+    }
+    .testimonial-col p{
+        max-height: none;
+        overflow-y: visible;
+    }
+    .testimonial-buttons{
+        flex-direction: column;
+        gap: 10px;
+    }
 }
