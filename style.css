@@ -331,15 +331,23 @@ h3{
     background: #f44336;
     transition: 1s;
 }
-@media(max-width: 700) {
+@media(max-width: 700px) {
+    /* 1. Reset the testimonial columns so they don't have a fixed height */
     .testimonial-col {
-        height: auto;
+        height: auto !important; /* 'Important' ensures it overrides the desktop height */
+        padding: 20px;
+        margin-bottom: 20px;
     }
-    .testimonial-col p{
-        max-height: none;
-        overflow-y: visible;
+
+    /* 2. Make the text inside expand fully on mobile */
+    .testimonial-col p {
+        max-height: none !important; /* Disables the 200px limit */
+        overflow-y: visible !important; /* Disables the internal scrollbar */
+        padding-bottom: 10px;
     }
-    .testimonial-buttons{
+
+    /* 3. Stack the buttons vertically so they aren't squished */
+    .testimonial-buttons {
         flex-direction: column;
         gap: 10px;
     }
